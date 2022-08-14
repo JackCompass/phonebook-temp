@@ -29,6 +29,6 @@
             android:name="address"
             app:argType="string" />
         <argument android:name="imageUri"
-            app:argType="android.net.Uri" />
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -74,7 +74,7 @@ class DetailFragment : Fragment() {
                 name,
                 phone,
                 address,
-                imageUri.toUri()
+                imageUri
             )
             findNavController().navigate(action)
         }

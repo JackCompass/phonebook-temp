@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.navigation.fragment.navArgs
 import com.example.phonebook.databinding.FragmentCardBinding
 
@@ -24,7 +25,7 @@ class CardFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        if (args.imageUri.toString().isNotEmpty()) binding.circleImageView.setImageURI(args.imageUri)
+        if (args.imageUri.isNotEmpty()) binding.circleImageView.setImageURI(args.imageUri.toUri())
         binding.nameDisplay.text = args.name
         binding.addressDisplay.text = args.address
         binding.phoenDisplay.text = args.phone
