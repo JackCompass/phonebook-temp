@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">phonebook</string>
+    <string name="developed_by_jack_sparrow">Developed by Jack Sparrow</string>
+    <string name="name_anuj_singh">Name: Anuj Singh</string>
+    <string name="phone_918299143278">Phone: +918299143278</string>
+    <string name="address_2_46_jankipuram_lucknow_up">Address: 2/46 Jankipuram, lucknow, UP</string>
+    <string name="user_selected_image">User Selected Image</string>
+    <string name="name_jack_sparrow">Name: Jack Sparrow</string>
+    <string name="phone_91829913278">Phone: +91829913278</string>
+    <string name="address_bright_lane">Address: bright lane</string>
+    <string name="generate_card_view">Generate card view</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="this_is_just_plain_text">This is just plain text</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="phone">Phone</string>
+</resources>
