@@ -27,7 +27,7 @@
                 android:id="@+id/circleImageView"
                 android:layout_width="128dp"
                 android:layout_height="128dp"
-                android:src="@color/purple_200"
+                android:src="@drawable/select_image"
                 android:layout_marginStart="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"

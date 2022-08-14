@@ -11,21 +11,23 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.net.toUri
 import androidx.navigation.fragment.findNavController
 import com.example.phonebook.databinding.FragmentDetailBinding
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.google.android.material.snackbar.Snackbar
 
 class DetailFragment : Fragment() {
 
     private lateinit var binding: FragmentDetailBinding
-    private lateinit var imageUriData: Uri
+    private var imageUriData: String = ""
     private val startForProfileImageResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
         val resultCode = result.resultCode
         val data = result.data
 
         if (resultCode == Activity.RESULT_OK) {
             val fileURI = data?.data!!
-            imageUriData = fileURI
+            imageUriData = fileURI.toString()
             binding.userAvatarImage.setImageURI(fileURI)
         }
     }
@@ -57,7 +59,6 @@ class DetailFragment : Fragment() {
         binding.submitButton.setOnClickListener {
             navigateToCardView()
         }
-
     }
 
 
@@ -66,14 +67,14 @@ class DetailFragment : Fragment() {
         val name = binding.nameInput.editText?.text.toString()
         val address = binding.addressInput.editText?.text.toString()
         val phone = binding.phoneInput.editText?.text.toString()
-        if (phone == "" && address == "" && name == "") {
-            Toast.makeText(activity, "this is okay", Toast.LENGTH_SHORT).show()
+        if (phone == "" && address == "" && name == "" && imageUri.isEmpty()) {
+            Snackbar.make(binding.root, "Please fill all the fields", Snackbar.LENGTH_LONG).show()
         } else {
             val action = DetailFragmentDirections.actionDetailFragmentToCardFragment(
                 name,
                 phone,
                 address,
-                imageUri
+                imageUri.toUri()
             )
             findNavController().navigate(action)
         }
